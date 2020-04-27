@@ -2,6 +2,21 @@ import socket
 import ssl
 import hashlib
 import binascii
+import sys
+
+
+
+# jika user memberikan argument melalui terminal
+
+def main():
+    arg = sys.argv[1:]
+
+    print('penggunaan:\n perintah >> python3 routeros_api.py -h <ip address> -p <port> -u <user> -P <password>')
+
+    if '-h' in arg:
+        print()
+
+
 
 
 PORT = 8728
@@ -238,3 +253,6 @@ class Api:
 
     def close(self):
         self.sock.close()
+
+if __name__ == '__main__':
+    main()
